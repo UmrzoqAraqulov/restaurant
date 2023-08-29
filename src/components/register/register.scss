@@ -1,0 +1,26 @@
+.title-register{
+  color: black;
+  
+}
+
+@media (max-width:600px){
+  .title-register{
+    line-height: 40px !important;
+  }
+}
+
+.ant-input{
+  padding: 10px;
+}
+
+.ant-btn{
+  border: none !important;
+  color: black !important;
+}
+
+.marque{
+  color: black;
+  font-weight: 600;
+  max-width: 1300px;
+  margin: 0 auto;
+}
