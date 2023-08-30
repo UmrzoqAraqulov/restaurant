@@ -4,11 +4,15 @@ import { Button, Form, Input } from "antd";
 import "./register.scss";
 import Cookies from "js-cookie";
 
-const Register = ({ lang,setShowRegister }) => {
+const Register = ({ lang, setShowRegister }) => {
   const finish = (values) => {
+    const res = { ...values, isCheck: false };
     const customers = Cookies.get("customers") || [];
-    customers.push(values);
-    Cookies.set("customers",customers);
+    customers.push(res);
+    if (customers.length > 0) {
+      console.log(customers);
+      Cookies.set("customers", JSON.stringify(customers));
+    }
     setShowRegister(false);
   };
   return (

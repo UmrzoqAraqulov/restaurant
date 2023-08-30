@@ -18,10 +18,11 @@ import ModuleCard from "../../components/moduleCard";
 import Register from "../../components/register";
 import { Link } from "react-router-dom";
 
-
 const HomePage = () => {
-  const [showRegister,setShowRegister] = useState(false);
-  const [lang, setLang] = useState(localStorage.getItem("lang")==="0"?false:true || true);
+  const [showRegister, setShowRegister] = useState(false);
+  const [lang, setLang] = useState(
+    localStorage.getItem("lang") === "0" ? false : true || true
+  );
   const controlLang = () => {
     console.log(lang);
     localStorage.setItem("lang", +!lang);
@@ -155,10 +156,10 @@ const HomePage = () => {
             : ""}
         </Marquee>
       </section>
-      <section className="containerr px-[30px] w-full text-sm font-semibold flex justify-between py-[20px] max-sm:flex-col items-center gap-[10px]">
+      <section className="containerr max-[600px]:text-center px-[30px] w-full text-sm font-semibold flex justify-between py-[20px] max-sm:flex-col items-center gap-[10px]">
         <h4>DEVELOPMENT BY UMRZOK ARAKULOV</h4>
         <div className="flex gap-3">
-          <Link to="">
+          <Link to="https://t.me/dusmuratoff_portfolio">
             <i className="fa-brands fa-telegram"></i>
           </Link>
           <Link to="https://www.instagram.com/_dusmuratoff/">
@@ -197,7 +198,7 @@ const HomePage = () => {
             ? "Ma'lumotlarngizni qoldiring va biz siz bilan albatta bog'lanamiz"
             : "Оставьте свои данные и мы обязательно с вами свяжемся"}
         </h2>
-        <Register lang={lang} setShowRegister={setShowRegister}/>
+        <Register lang={lang} setShowRegister={setShowRegister} />
       </div>
     </Fragment>
   );
